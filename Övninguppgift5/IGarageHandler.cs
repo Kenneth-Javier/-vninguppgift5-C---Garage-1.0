@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace Övninguppgift5
 {
-    interface IEnumerable<out T>
+    interface IGarageHandler : IEnumerable
     {
-
+        void Park<T>(T item);
+        
+           
+        
     }
 }

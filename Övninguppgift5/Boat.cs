@@ -7,41 +7,14 @@ using System.Threading.Tasks;
 
 namespace Övninguppgift5
 {
-    internal class Boat : IVehicle
+    internal class Boat : Vehicle
     {
-        public void Color()
+        public int Hight { get; set; }
+        public Boat(string vehicleRegistrationNumber, ConsoleColor color, int numberOfWeels, string transportationOn, int passengers, int hight) : base(vehicleRegistrationNumber, color, numberOfWeels, transportationOn, passengers)
         {
-            throw new NotImplementedException();
+            Hight = hight;
         }
 
-        public void EnergySourse()
-        {
-            throw new NotImplementedException();
-        }
 
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void NumberOfWeels()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Passengers()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void TransportationOn()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void VehicleRegistrationNumber()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

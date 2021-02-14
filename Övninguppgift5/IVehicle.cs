@@ -7,30 +7,25 @@ using System.Threading.Tasks;
 
 namespace Övninguppgift5
 {
-    interface IVehicle :IEnumerable
+    interface IVehicle 
     {
 
         //● Registreringsnumret är unikt
-        public void VehicleRegistrationNumber();
-        public void Color();
-        public void NumberOfWeels();
-        public void EnergySourse();
-        public void TransportationOn();
 
-        public void Passengers();
+        string VehicleRegistrationNumber { get; set; }
+        ConsoleColor Color { get; set; }
+        int NumberOfWeels { get; set; }
+        string TransportationOn { get; set; }
+        int Passengers { get; set; }
+       
+        
+        //string VehicleRegistrationNumber();
+       //ConsoleColor Color(ConsoleColor color);
+       //public int NumberOfWeels(int NoW);
+       //public string TransportationOn(string tO);
+       //public int Passengers(int P);
 
-        //        Kravspecifikation
-        //Fordonen ska implementeras som klassen Vehicle och subklasser till den.
-        //● Vehicle innehåller samtliga egenskaper som ska finnas i samtliga fordonstyper.
 
-        //T.ex.
-
-        //registreringsnummer, 
-        //färg, 
-        //antalhjul 
-     //och andra egenskaper ni kan komma på.
-        //energikälla
-        //färdmedel på
 
 
         //● Det måste minst finnas följande subklasser:

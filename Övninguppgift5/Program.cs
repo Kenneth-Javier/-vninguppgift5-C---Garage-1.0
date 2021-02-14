@@ -4,9 +4,26 @@ namespace Övninguppgift5
 {
     class Program
     {
+       
+        //Asist asist = new Asist();
+
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            UImenu u = new UImenu();
+            //Asist A = new Asist();
+            //A.exampleToLower();
+
+            //startup();
+
+            u.Menu();
         }
-    }
+
+        private static void startup()
+        {
+            ValuesOfStrings.StrOut("bxcb");
+            
+        }
+
+    }        
 }

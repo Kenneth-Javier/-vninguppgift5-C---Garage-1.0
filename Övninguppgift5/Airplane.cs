@@ -7,41 +7,12 @@ using System.Threading.Tasks;
 
 namespace Övninguppgift5
 {
-    class Airplane : IVehicle
+    internal class Airplane : Vehicle
     {
-        public void Color()
+        public int WingSpan { get; set; }
+        public Airplane(string vehicleRegistrationNumber, ConsoleColor color, int numberOfWeels, string transportationOn, int passengers, int wingspan) : base(vehicleRegistrationNumber, color, numberOfWeels, transportationOn, passengers)
         {
-            throw new NotImplementedException();
-        }
-
-        public void EnergySourse()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void NumberOfWeels()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Passengers()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void TransportationOn()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void VehicleRegistrationNumber()
-        {
-            throw new NotImplementedException();
+            WingSpan = wingspan;
         }
     }
 }
