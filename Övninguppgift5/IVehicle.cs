@@ -12,18 +12,19 @@ namespace Övninguppgift5
 
         //● Registreringsnumret är unikt
 
-        string VehicleRegistrationNumber { get; set; }
+        string RegistrationNumber { get; set; }
         ConsoleColor Color { get; set; }
-        int NumberOfWeels { get; set; }
+        int NumOfWeels { get; set; }
         string TransportationOn { get; set; }
         int Passengers { get; set; }
-       
-        
+        string VehicleType { get; set; }
+
+
         //string VehicleRegistrationNumber();
-       //ConsoleColor Color(ConsoleColor color);
-       //public int NumberOfWeels(int NoW);
-       //public string TransportationOn(string tO);
-       //public int Passengers(int P);
+        //ConsoleColor Color(ConsoleColor color);
+        //public int NumberOfWeels(int NoW);
+        //public string TransportationOn(string tO);
+        //public int Passengers(int P);
 
 
 

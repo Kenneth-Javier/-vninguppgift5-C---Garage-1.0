@@ -10,9 +10,15 @@ namespace Övninguppgift5
     class Car : Vehicle
     {
         public int MaxKmH { get; set; }
-        public Car(string vehicleRegistrationNumber, ConsoleColor color, int numberOfWeels, string transportationOn, int passengers, int maxKmH) : base(vehicleRegistrationNumber, color, numberOfWeels, transportationOn, passengers)
+        public Car(string registrationNumber, ConsoleColor color, int numberOfWeels, string transportationOn, int passengers,string vehicleType, int maxKmH) 
+            : base(registrationNumber, color, numberOfWeels, transportationOn, passengers, vehicleType)
         {
             MaxKmH = maxKmH;
+        }
+
+        public override string Print()
+        {
+            return $"{ base.Print()}, maximum velocity {MaxKmH}km/h";
         }
     }
 }

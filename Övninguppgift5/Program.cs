@@ -12,18 +12,11 @@ namespace Övninguppgift5
         {
             UImenu u = new UImenu();
             //Asist A = new Asist();
-            //A.exampleToLower();
-
-            //startup();
 
             u.Menu();
         }
 
-        private static void startup()
-        {
-            ValuesOfStrings.StrOut("bxcb");
-            
-        }
+
 
     }        
 }

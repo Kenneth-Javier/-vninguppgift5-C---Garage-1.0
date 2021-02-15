@@ -17,20 +17,23 @@ namespace Övninguppgift5
 
         public void Menu()
         {
-            ValuesOfStrings.StrOut($"Welcome to the game! "
-                + "\nSätt en kapacitet (antal parkeringsplatser) för ett nytt garage");
-            var str = Console.ReadLine();
-            if (ValuesOfStrings.IsStringInt(str))
+            ValuesOfStrings.StrOut($"Welcome to the game! ");
+            bool capacityLoop = true;
+            do 
             {
+            ValuesOfStrings.StrOut($"\nSätt en kapacitet (antal parkeringsplatser) för ett nytt garage");
+            var str = Console.ReadLine();
+            if (ValuesOfStrings.IsStringInt(str) && !string.IsNullOrEmpty(str))
+            {
+                capacityLoop = false;
                 capacity = ValuesOfStrings.IntParsedValue(str);
                 garageHandler = new GarageHandler(capacity);
-                ValuesOfStrings.StrOut("\n5. Sätta en kapacitet (antal parkeringsplatser)"
-                + "vid instansieringen av ett nytt garage");
             }
+            } while (capacityLoop);
             bool menuActual = true; 
             do{
 
-                ValuesOfStrings.StrOut("Please navigate through the menu by inputting the number "
+                ValuesOfStrings.StrOut("\nPlease navigate through the menu by inputting the number "
                + "\n(1, 2, 3 ,4, 5, 6, 7, 8, 0) of your choice"
 
                + "\n1. Lista samtliga parkerade fordon"
@@ -49,7 +52,8 @@ namespace Övninguppgift5
                + "\n     *Alla motorcyklar som är rosa och har 3 hjul."
                + "\n     *Alla lastbilar "
                + "\n     *Alla röda fordon "
-               + "\n0. Exit the application");
+               + "\n0. Exit the application"
+               + "\n ");
                 char input = ' '; //Creates the character input to be used with the switch-case below.
                 try
                 {
@@ -63,7 +67,7 @@ namespace Övninguppgift5
                 switch (input)
                 {
                     case '1':
-                        //garageHandler.CaseFindVihecle();
+                        garageHandler.Case1ListVihecles();
                         break;
                     case '2':
                         
@@ -74,11 +78,8 @@ namespace Övninguppgift5
                     case '4':
                         
                         break;
-                    case '5':
-
-                        break;
                     case '6':
-
+                        //Möjlighet att populera garaget med ett antal fordon från start.
                         garageHandler.Case6PopVihecle();
                         break;
                     case '7':
@@ -103,30 +104,5 @@ namespace Övninguppgift5
 
         }
         
-        // moved to garageHandler
-        //public void Case7()
-        //{
-        //    
-        //    bool menuActual = true;
-        //    do
-        //    {
-        //
-        //    Console.Write($""
-        //        + "\n   7. Hitta ett specifikt fordon via registreringsnumret."
-        //        + "\n   Det ska gå fungera med både ABC123 samt Abc123 eller AbC123."
-        //        + "\n "
-        //        + "\n Sök: ");
-        //    string s = Console.ReadLine();
-        //        s = s.ToLower();
-        //        if (s.Length == 6) 
-        //        {
-        //            Vehicle v = (Vehicle)G.Where(w => w.VehicleRegistrationNumber == s);
-        //            Console.WriteLine(v);
-        //        }
-        //        else { Console.Write($"  Endast 6st Bokstäver/Siffror...\n"); }
-        //
-        //    } while (menuActual);
-        //}
-
     }
 }
