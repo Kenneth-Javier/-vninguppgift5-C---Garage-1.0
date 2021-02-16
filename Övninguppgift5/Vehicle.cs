@@ -16,12 +16,12 @@ namespace Övninguppgift5
         public Vehicle(string registrationNumber, ConsoleColor color, int numOfWeels,
             string transportationOn, int passengers, string vehicleType)
         {
-            RegistrationNumber = registrationNumber.ToLower();
+            RegistrationNumber = registrationNumber.ToUpper();
             Color = color;
             NumOfWeels = numOfWeels;
             TransportationOn = transportationOn;
             Passengers = passengers;
-            VehicleType = vehicleType;
+            VehicleType = vehicleType.ToLower();
         }
 
         public virtual string Print()
