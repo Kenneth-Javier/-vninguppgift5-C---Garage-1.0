@@ -43,7 +43,7 @@ namespace Övninguppgift5
               // + "\n5. Sätta en kapacitet (antal parkeringsplatser) vid instansieringen av ett nytt garage" //Klar
                + "\n6. Möjlighet att populera garaget med ett antal fordon från start." // Klar
               
-               + "\n7. Hitta ett specifikt fordon via registreringsnumret." //Klar
+               + "\n7. Hitta ett specifikt fordon via registreringsnumret." //Klar 
                + "\n   Det ska gå fungera med både ABC123 samt Abc123 eller AbC123."
                + "\n8. Söka efter fordon utifrån en egenskap eller flera(alla möjliga kombinationer frånbasklassen Vehicle)."
                + "\n   Exempelvis: "
