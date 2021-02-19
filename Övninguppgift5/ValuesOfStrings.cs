@@ -11,7 +11,7 @@ namespace Övninguppgift5
         //Prints out strings
         public static void StrOut(string str)
         {
-            Console.WriteLine(str);
+            Console.WriteLine($"{str}");
         }
 
 
@@ -108,7 +108,19 @@ namespace Övninguppgift5
             return db;
         }
 
-
+        public static int GetIntegerFromUser()
+        {
+            string str = null;
+            do
+            {
+                try
+                {
+                    str = Console.ReadLine();
+                    if (IsStringInt(str)){ return IntParsedValue(str);}
+                }
+                catch (IndexOutOfRangeException) { Console.Clear(); ValuesOfStrings.StrOut("Please enter some input!"); }
+            } while (true);
+        }
 
     }
 }

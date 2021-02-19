@@ -18,31 +18,33 @@ namespace Övninguppgift5
         {
             ValuesOfStrings.StrOut($"Welcome to the game! ");
             bool capacityLoop = true;
-            do 
+            do
             {
-            ValuesOfStrings.StrOut($"\nSätt en kapacitet (antal parkeringsplatser) för ett nytt garage");
-            var str = Console.ReadLine();
-            if (ValuesOfStrings.IsStringInt(str) && !string.IsNullOrEmpty(str))
-            {
-                capacityLoop = false;
-                capacity = ValuesOfStrings.IntParsedValue(str);
-                garageHandler = new GarageHandler(capacity);
-            }
+                ValuesOfStrings.StrOut($"\nSätt en kapacitet (antal parkeringsplatser) för ett nytt garage");
+                var str = Console.ReadLine();
+                if (ValuesOfStrings.IsStringInt(str) && !string.IsNullOrEmpty(str))
+                {
+                    capacityLoop = false;
+                    capacity = ValuesOfStrings.IntParsedValue(str);
+                    garageHandler = new GarageHandler(capacity);
+                }
             } while (capacityLoop);
-            bool menuActual = true; 
-            do{
-
+            
+            bool menuActual = true;
+            do
+            {
+                
                 ValuesOfStrings.StrOut("\nPlease navigate through the menu by inputting the number "
                + "\n(1, 2, 3 ,4, 5, 6, 7, 8, 0) of your choice"
 
                + "\n1. Lista samtliga parkerade fordon" //klar
                + "\n2. Lista fordonstyper och hur många av varje som står i garaget"
                + "\n3. Lägga till fordon i garaget"// klar
-               + "\n4. Ta bort fordon ur garaget"
+               + "\n4. Ta bort fordon ur garaget"// Klar
 
-              // + "\n5. Sätta en kapacitet (antal parkeringsplatser) vid instansieringen av ett nytt garage" //Klar
+               // + "\n5. Sätta en kapacitet (antal parkeringsplatser) vid instansieringen av ett nytt garage" //Klar
                + "\n6. Möjlighet att populera garaget med ett antal fordon från start." // Klar
-              
+
                + "\n7. Hitta ett specifikt fordon via registreringsnumret." //Klar 
                + "\n   Det ska gå fungera med både ABC123 samt Abc123 eller AbC123."
                + "\n8. Söka efter fordon utifrån en egenskap eller flera(alla möjliga kombinationer frånbasklassen Vehicle)."
@@ -53,12 +55,12 @@ namespace Övninguppgift5
                + "\n     *Alla röda fordon "
                + "\n0. Exit the application" //Klar
                + "\n ");
-                char input = ' '; 
+                char input = ' ';
                 try
                 {
-                    input = Console.ReadLine()[0]; 
+                    input = Console.ReadLine()[0];
                 }
-                catch (IndexOutOfRangeException) 
+                catch (IndexOutOfRangeException)
                 {
                     Console.Clear();
                     ValuesOfStrings.StrOut("Please enter some input!");
@@ -70,14 +72,16 @@ namespace Övninguppgift5
                         garageHandler.Case1ListVehicles();
                         break;
                     case '2':
-                        
+
                         break;
                     case '3':
                         //Lägga till fordon i garaget"                 
                         garageHandler.Case3AddVehicleInGarage();
                         break;
                     case '4':
-                        
+                        //Ta bort fordon ur garaget"
+                        ValuesOfStrings.StrOut("\nOr Remove Vehicle by entering registration number:");
+                        if (garageHandler.Case4Remove()) { ValuesOfStrings.StrOut(" has successfuly been Removed");}
                         break;
                     case '6':
                         //Möjlighet att populera garaget med ett antal fordon från start.
@@ -99,9 +103,30 @@ namespace Övninguppgift5
                         break;
                 }
 
-            } while(menuActual);
+            } while (menuActual);
 
         }
-        
+        //public void Case5NewGarageCapacity()
+        //{
+        //    
+        //    bool capacityLoop = true;
+        //    do
+        //    {
+        //        string str = null;
+        //        ValuesOfStrings.StrOut($"\nSätt en kapacitet (antal parkeringsplatser) för ett nytt garage");
+        //        try
+        //        {
+        //            str = Console.ReadLine();
+        //        }
+        //        catch (NullReferenceException) { Console.Clear(); ValuesOfStrings.StrOut("Please enter some input!"); }
+        //        if (ValuesOfStrings.IsStringInt(str) && !string.IsNullOrEmpty(str))
+        //        {
+        //            capacity = ValuesOfStrings.IntParsedValue(str);
+        //            garageHandler = new GarageHandler(capacity);
+        //            capacityLoop = false;
+        //        }
+        //    } while (capacityLoop);
+        //}
+
     }
 }

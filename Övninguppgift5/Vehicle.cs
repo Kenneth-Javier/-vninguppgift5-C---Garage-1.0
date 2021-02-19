@@ -6,7 +6,7 @@ namespace Övninguppgift5
     abstract class Vehicle : IVehicle
     {
 
-        public string RegistrationNumber { get;  set; }
+        public string RegNr { get;  set; }
         public ConsoleColor Color { get; set; }
         public int NumOfWeels { get; set; }
         public string TransportationOn { get; set; }
@@ -16,7 +16,7 @@ namespace Övninguppgift5
         public Vehicle(string registrationNumber, ConsoleColor color, int numOfWeels,
             string transportationOn, int passengers, string vehicleType)
         {
-            RegistrationNumber = registrationNumber.ToUpper();
+            RegNr = registrationNumber.ToUpper();
             Color = color;
             NumOfWeels = numOfWeels;
             TransportationOn = transportationOn;
@@ -26,7 +26,7 @@ namespace Övninguppgift5
 
         public virtual string Print()
         {
-            return $"This {Color} {VehicleType} with Regno: {RegistrationNumber}, have {NumOfWeels} wheels, drives on {TransportationOn}, {Passengers}passengers";
+            return $"This {Color} {VehicleType} with Regno: {RegNr}, have {NumOfWeels} wheels, drives on {TransportationOn}, {Passengers}passengers";
         }
 
     }

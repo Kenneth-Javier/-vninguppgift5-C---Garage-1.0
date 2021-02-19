@@ -30,6 +30,22 @@ namespace Övninguppgift5
             }
         }
 
+        public bool RegCheck(string s) { return vehicles.Any(v => v.RegNr == s); }
+
+        public bool Remove(string s)
+        {
+            for (int i = 0; i < vehicles.Length; i++)
+            {
+                if(vehicles[i].RegNr == s)
+                {
+                    Console.Write($"{vehicles[i].Color} {vehicles[i].VehicleType} {vehicles[i].RegNr}"); 
+                    vehicles[i] = default(T);
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public Garage(int capacity)
         {
             if (capacity is not 0) vehicles = new T[capacity];

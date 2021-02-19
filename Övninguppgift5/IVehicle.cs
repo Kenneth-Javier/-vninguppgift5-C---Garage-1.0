@@ -12,7 +12,7 @@ namespace Övninguppgift5
 
         //● Registreringsnumret är unikt
 
-        string RegistrationNumber { get; set; }
+        string RegNr { get; set; }
         ConsoleColor Color { get; set; }
         int NumOfWeels { get; set; }
         string TransportationOn { get; set; }
