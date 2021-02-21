@@ -43,6 +43,15 @@ namespace Övninguppgift5
                     { '4',"Bus" },
                     { '5',"Boat" }
                 };
+        readonly Dictionary<int, Type> Dtype = new Dictionary<int, Type>
+        {
+                    { 1, typeof(Car) },
+                    { 2, typeof(Bus) },
+                    { 3, typeof(Boat) },
+                    { 4, typeof(Airplane) },
+                    { 5, typeof(Motorcycle) },
+                    { 6, typeof(Boat) }
+        };
         public Garage<Vehicle> G;
         readonly UImenu U = new UImenu();
         public GarageHandler(int capacity) => G = new Garage<Vehicle>(capacity);
@@ -53,12 +62,28 @@ namespace Övninguppgift5
 
         internal void Case2CountTypes()
         {
-            foreach (var item in G)
-            {
-                var R = G.Where(v => v.GetType().Name == "Car");
 
-                H.PrintL($"{R} hf");
-            }
+            //for (int i = 0; i < G.Count(); i++)
+            //{
+            //    if (Dtype.ContainsKey(i))
+            //    {
+            //        Type aui = Dtype[i];
+            //        H.PrintL($"vehicleType {Dtype[i]} ");
+            //        
+            //    //int va = G.Where(v => v is aui.Count();
+            //    }
+            //}
+            int airplanes = G.Where(v => v is Airplane).Count();
+            int motorcycles = G.Where(v => v is Motorcycle).Count();
+            int cars = G.Where(v => v is Car).Count();
+            int buses = G.Where(v => v is Bus).Count();
+            int boats = G.Where(v => v is Boat).Count();
+
+            if (airplanes > 0)H.PrintL($"{airplanes} {nameof(airplanes)} ");
+            if (motorcycles > 0) H.PrintL($"{motorcycles} {nameof(motorcycles)} ");
+            if (cars > 0) H.PrintL($"{cars} {nameof(cars)} ");
+            if (buses > 0) H.PrintL($"{buses} {nameof(buses)} ");
+            if (boats > 0) H.PrintL($"{boats} {nameof(boats)} ");
             //Iterera över  garage med en foreach
             //kolla v.GetType().Name av vaje fordon
             //ha en counter för de olika förekomsterna
@@ -66,7 +91,7 @@ namespace Övninguppgift5
 
             //order by mm
         }
-
+        //private int coV(Type v) { return G.Where(v => v is v).Count();}
 
 
         internal void Case3AddVehicleInGarage()
@@ -155,23 +180,23 @@ namespace Övninguppgift5
         }
         
         //part of case8
-        public Vehicle Case8SearchForVehicleByValues(string what)
+        public void Case8SearchForVehicleByValues()
         {
-        
-            Vehicle result;
-            result= G.FirstOrDefault(w => w.RegNr == what);
-            result = G.FirstOrDefault(w => w.Color == (ConsoleColor)H.IntParsedValue(what)) ;
-            result = G.FirstOrDefault(w => w.NumOfWeels == H.IntParsedValue(what));
-            result = G.FirstOrDefault(w => w.TransportationOn == what);
-            result = G.FirstOrDefault(w => w.Passengers == H.IntParsedValue(what));
-            result = G.FirstOrDefault(w => w.VehicleType == what);
+            G.CountVehicles();
+          //Vehicle result;
+          //result= G.FirstOrDefault(w => w.RegNr == what);
+          //result = G.FirstOrDefault(w => w.Color == (ConsoleColor)H.IntParsedValue(what)) ;
+          //result = G.FirstOrDefault(w => w.NumOfWeels == H.IntParsedValue(what));
+          //result = G.FirstOrDefault(w => w.TransportationOn == what);
+          //result = G.FirstOrDefault(w => w.Passengers == H.IntParsedValue(what));
+          //result = G.FirstOrDefault(w => w.VehicleType == what);
             //  result = G.Where(w => w.GetType().GetElementType() == s);
             // result = G.FirstOrDefault(foreach (var item in Vehicle)
             // {
             //
             // }              
-            var g = result.VehicleType;
-            return result;
+           // var g = result.VehicleType;
+           // return result;
         }
 
         public string MakeANewReg()

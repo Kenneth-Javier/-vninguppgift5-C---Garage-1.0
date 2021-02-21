@@ -29,10 +29,17 @@ namespace Övninguppgift5
                 }
             }
         }
+        //under construktion
+        public void CountVehicles()
+        {
+            for (int i = 0; i < vehicles.Length; i++)
+            {
+                var s = vehicles[i].GetType().Name;
+                var n = vehicles[i].GetType().Name;
+                H.PrintL($"{i}.{s}: {n}");
+            }
+        }
 
-        //{ H.PrintL("RegExist(string s)" + s);
-        //kan inte skicka false av någon anledning
-        //public bool RegExist(string s) { return vehicles.Any(v => v.RegNr == s); }
         public bool RegExist(string s) 
         {
             for (int i = 0; i < vehicles.Length; i++)
@@ -52,10 +59,8 @@ namespace Övninguppgift5
         
         public bool Remove(string s)
         {
-            H.PrintL("Remove(string s)"+ s);
             for (int i = 0; i < vehicles.Length; i++)
-            {
-                
+            {               
                 if(vehicles[i].RegNr == s)
                 {
                     H.Print($"{vehicles[i].Color} {vehicles[i].VehicleType} {vehicles[i].RegNr}"); 

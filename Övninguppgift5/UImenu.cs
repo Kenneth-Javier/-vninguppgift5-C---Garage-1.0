@@ -38,7 +38,7 @@ namespace Övninguppgift5
                + "\n(1, 2, 3 ,4, 5, 6, 7, 8, 0) of your choice"
 
                + "\n1. Lista samtliga parkerade fordon" //klar
-               + "\n2. Lista fordonstyper och hur många av varje som står i garaget"
+               + "\n2. Lista fordonstyper och hur många av varje som står i garaget"//Klar
                + "\n3. Lägga till fordon i garaget"// klar
                + "\n4. Ta bort fordon ur garaget"// Klar
 
@@ -62,7 +62,8 @@ namespace Övninguppgift5
                         garageHandler.Case1ListVehicles();
                         break;
                     case '2':
-
+                        //Lista fordonstyper och hur många av varje som står i garaget"
+                        garageHandler.Case2CountTypes(); 
                         break;
                     case '3':
                         //Lägga till fordon i garaget"                 
@@ -81,10 +82,10 @@ namespace Övninguppgift5
                     case '7':
                         //Hittar ett specifikt fordon via registreringsnumret."
                         garageHandler.Case7FindVehicle();
-
                         break;
                     case '8':
 
+                        garageHandler.Case8SearchForVehicleByValues(); //developing
                         break;
                     case '0':
                         Environment.Exit(0);
