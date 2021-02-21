@@ -5,7 +5,6 @@ namespace Övninguppgift5
 {
     abstract class Vehicle : IVehicle
     {
-
         public string RegNr { get;  set; }
         public ConsoleColor Color { get; set; }
         public int NumOfWeels { get; set; }
@@ -26,7 +25,7 @@ namespace Övninguppgift5
 
         public virtual string Print()
         {
-            return $"This {Color} {VehicleType} with Regno: {RegNr}, have {NumOfWeels} wheels, drives on {TransportationOn}, {Passengers}passengers";
+            return $"{Color} {VehicleType} with Regno: {RegNr}, have {NumOfWeels} wheels, drives on {TransportationOn}, {Passengers}passengers";
         }
 
     }

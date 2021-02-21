@@ -10,30 +10,6 @@ namespace Övninguppgift5
     {
 
 
-        public string ToLower(string str)
-        {
-            string s = str.ToLower();
-            return s;
-        }
-
-        public void exampleToLower()
-        {
-
-            String A = "ABC123";
-            String B = "Abc123";
-            String C = "AbC123";
-            Console.WriteLine($"String A = ABC123 :{A}"
-                                + $"\nString B = Abc123 :{B}"
-                                + $"\nString C = AbC123 :{C}");
-
-            A = A.ToLower();
-            B = B.ToLower();
-            C = C.ToLower();
-            Console.WriteLine($"\nexampleToLower()"
-                            + $"\nString A = ABC123 :{A}"
-                            + $"\nString B = Abc123 :{B}"
-                            + $"\nString C = AbC123 :{C}");
-        }
 
     }
 }

@@ -8,24 +8,24 @@ namespace Övninguppgift5
 {
     class UImenu
     {
-        Asist As = new Asist();
+        //Asist As = new Asist();
         GarageHandler garageHandler;
-        List<object> o = new List<object>();
+        //List<object> o = new List<object>();
 
         public static int capacity = 0;
 
         public void Menu()
         {
-            ValuesOfStrings.StrOut($"Welcome to the game! ");
+            H.PrintL($"Welcome to the game! ");
             bool capacityLoop = true;
             do
             {
-                ValuesOfStrings.StrOut($"\nSätt en kapacitet (antal parkeringsplatser) för ett nytt garage");
+                H.PrintL($"\nSätt en kapacitet (antal parkeringsplatser) för ett nytt garage");
                 var str = Console.ReadLine();
-                if (ValuesOfStrings.IsStringInt(str) && !string.IsNullOrEmpty(str))
+                if (H.IsStringInt(str) && !string.IsNullOrEmpty(str))
                 {
                     capacityLoop = false;
-                    capacity = ValuesOfStrings.IntParsedValue(str);
+                    capacity = H.IntParsedValue(str);
                     garageHandler = new GarageHandler(capacity);
                 }
             } while (capacityLoop);
@@ -34,7 +34,7 @@ namespace Övninguppgift5
             do
             {
                 
-                ValuesOfStrings.StrOut("\nPlease navigate through the menu by inputting the number "
+                H.PrintL("\nPlease navigate through the menu by inputting the number "
                + "\n(1, 2, 3 ,4, 5, 6, 7, 8, 0) of your choice"
 
                + "\n1. Lista samtliga parkerade fordon" //klar
@@ -55,17 +55,7 @@ namespace Övninguppgift5
                + "\n     *Alla röda fordon "
                + "\n0. Exit the application" //Klar
                + "\n ");
-                char input = ' ';
-                try
-                {
-                    input = Console.ReadLine()[0];
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    Console.Clear();
-                    ValuesOfStrings.StrOut("Please enter some input!");
-                }
-                switch (input)
+                switch (H.GetCharFromUser())
                 {
                     case '1':
                         //Lista samtliga parkerade fordon
@@ -80,8 +70,9 @@ namespace Övninguppgift5
                         break;
                     case '4':
                         //Ta bort fordon ur garaget"
-                        ValuesOfStrings.StrOut("\nOr Remove Vehicle by entering registration number:");
-                        if (garageHandler.Case4Remove()) { ValuesOfStrings.StrOut(" has successfuly been Removed");}
+                        H.PrintL("\nRemove Vehicle by entering registration number");
+                        if (garageHandler.Case4Remove()) { H.Print(" has successfuly been Removed");}
+                        else { H.Print(" has NOT been Removed"); }
                         break;
                     case '6':
                         //Möjlighet att populera garaget med ett antal fordon från start.
@@ -99,7 +90,7 @@ namespace Övninguppgift5
                         Environment.Exit(0);
                         break;
                     default:
-                        ValuesOfStrings.StrOut("Please enter some valid input (1, 2, 3, 4, 5, 6, 7, 8, 0)");
+                        H.PrintL("Please enter some valid input (1, 2, 3, 4, 5, 6, 7, 8, 0)");
                         break;
                 }
 
